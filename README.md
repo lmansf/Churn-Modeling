@@ -6,6 +6,8 @@ The dataset used is the Customer Churn dataset from Kaggle found here: https://w
 - The dataset already contains important features, so there's no need to do feature engineering in this scenario.
 ## Handling the Dataset
 - The dataset is split into a validation and training set based on the "AccountWeeks" column. accounts with less than 97 Account Weeks were used for validation, and those with 97 or more account weeks were used as historical training data. The split is about 1500 records for each.
+## Handling Label Imbalance
+Because we're using supervised training methods, we have to be mindful of unbalanced data. In our case, there are a lot more records of customers who don't churn than who do. In order to handle this I've chosen to resample using undersampling. This allows me to have a balanced dataset for training, which improves accuracy and generalization later.
 
 ## Models
 The models tested include:
